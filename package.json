@@ -1,0 +1,31 @@
+{
+  "name": "elasticgps",
+  "version": "1.0.0",
+  "description": "GPS for ElecticSearch Service",
+  "main": "main.js",
+  "scripts": {
+    "test": "karma test",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PauloGaldo/ElasticGPS.git"
+  },
+  "keywords": [
+    "ElesticSearch",
+    "Service",
+    "AngularJS",
+    "GoogleMaps",
+    "GPS"
+  ],
+  "author": "Paulo Galdo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PauloGaldo/ElasticGPS/issues"
+  },
+  "homepage": "https://github.com/PauloGaldo/ElasticGPS#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "log": "^1.4.0"
+  }
+}

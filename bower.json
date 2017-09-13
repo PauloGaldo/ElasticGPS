@@ -1,0 +1,30 @@
+{
+  "name": "elasticgps",
+  "description": "GPS for ElecticSearch Service",
+  "main": "main.js",
+  "authors": [
+    "Paulo Galdo"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "ElesticSearch",
+    "Service",
+    "AngularJS",
+    "GoogleMaps",
+    "GPS"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.6",
+    "angular-sanitize": "^1.6.6",
+    "angular-ui-router": "^1.0.5"
+  }
+}
