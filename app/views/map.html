@@ -1,1 +1,13 @@
-<div>Map Container</div>
+<div>
+    <ui-gmap-google-map center='vm.map.center' zoom='vm.map.zoom' options='vm.map.options'>
+        <ui-gmap-layer type="TrafficLayer" show="map.showTraficLayer">
+            <ui-gmap-markers
+                models="vm.map.markers"
+                coords="'location'"
+                icon="'icon'"
+                control="vm.markerControl"
+                modelsByRef="true"
+                ></ui-gmap-markers>
+        </ui-gmap-layer>
+    </ui-gmap-google-map>
+</div>
