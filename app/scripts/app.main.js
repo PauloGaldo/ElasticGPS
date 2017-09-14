@@ -1,6 +1,6 @@
 (function () {
     'use strict';
 
-    angular.module('ElasticGpsApp', ['ngSanitize', 'ui.router']);
+    angular.module('ElasticGpsApp', ['ngSanitize', 'ui.router', 'uiGmapgoogle-maps']);
 
 })();
