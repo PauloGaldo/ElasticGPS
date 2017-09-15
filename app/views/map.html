@@ -1,5 +1,6 @@
 <div>
-    <ui-gmap-google-map center='vm.map.center' zoom='vm.map.zoom' options='vm.map.options'>
+    <span>{{vm.zoom}}</span>
+    <ui-gmap-google-map center='vm.map.center' zoom='vm.map.zoom' options='vm.map.options'  events="vm.map.events">
         <ui-gmap-layer type="TrafficLayer" show="map.showTraficLayer">
             <ui-gmap-markers
                 models="vm.map.markers"

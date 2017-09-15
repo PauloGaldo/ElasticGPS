@@ -5,13 +5,15 @@
             .module('ElasticGpsApp')
             .controller('MainCtrl', MainCtrl);
 
-    MainCtrl.$inject = ['$scope', 'uiGmapGoogleMapApi', 'ElasticService', 'MapFactory'];
+    MainCtrl.$inject = ['$scope', 'uiGmapGoogleMapApi', 'ElasticService', 'MapFactory', '$timeout'];
 
-    function MainCtrl($scope, uiGmapGoogleMapApi, ElasticService, MapFactory) {
+    function MainCtrl($scope, uiGmapGoogleMapApi, ElasticService, MapFactory, $timeout) {
         var vm = this;
         /*VARIABLES*/
         vm.map = {
-            center: {latitude: 20, longitude: -100}, zoom: 5,
+            control: {},
+            center: {latitude: 20, longitude: -100},
+            zoom: 5,
             markers: [],
             options: {
                 streetViewControl: false,
@@ -20,12 +22,28 @@
                 rotateControl: true,
                 zoomControl: true
             },
-            showTraficLayer: true
+            showTraficLayer: true,
+            events: {
+                click: function (map) {
+                    vm.zoom = map.getZoom();
+                },
+                dragend: function (map) {
+                    vm.zoom = map.getZoom();
+                },
+                zoom_changed: function (map) {
+                    vm.zoom = map.getZoom();
+                },
+                center_changed: function (map) {
+                    console.log(map);
+                    vm.zoom = map.getZoom();
+                }
+            }
         };
         vm.markerControl = {};
+        vm.zoom = 15;
         /*METODOS Y/O FUNCIONES*/
         vm.refreshMap = refreshMap;
-        
+
         /**
          * Evento producido al terminar de cargar contenido de vista
          * @param {type} event 
@@ -50,7 +68,10 @@
                         console.log(locations);
                         vm.map.center = locations.center;
                         vm.map.markers = locations.markers;
-                        vm.map.zoom = 15;
+                        vm.map.zoom = vm.zoom;
+                        $timeout(function () {
+                            refreshMap();
+                        }, 5000);
                     });
         }
 
